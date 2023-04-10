@@ -414,6 +414,7 @@ if __name__ == "__main__":
         params = parse_qs(os.environ.get("INCOMING_HOOK_BODY"))
         helpers.log_to_console("DEBUG", params)
 
+    print('PARAMS :', json.dumps(params))
     if params and all([params[prm_key] for prm_key in ["archive_name","callback_deploy_url", "callback_deploy_url"]]):
         archive_name = (
             params["archive_name"][0]
